@@ -75,11 +75,11 @@ class CourseTimetable(QMainWindow):
         label_12.setText(
             "<font style = 'font-size:15px;font-weight: bold;text-align:center;'>第一节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>08：15~09：00</font>"
+            "<font style = 'font-size:13px;'>08:00 ~ 08:45</font>"
             "<br/>""<br/>"
             "<font style = 'font-size:15px;font-weight: bold;'>第二节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>09：05~09：50</font>"
+            "<font style = 'font-size:13px;'>08:55 ~ 09:40</font>"
         )
         label_12.setAlignment(Qt.AlignCenter)
         label_12.setStyleSheet('background-color:	LightGreen;')
@@ -89,11 +89,11 @@ class CourseTimetable(QMainWindow):
         label_34.setText(
             "<font style = 'font-size:15px;font-weight: bold;'>第三节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>08：15~09：00</font>"
+            "<font style = 'font-size:13px;'>10:10 ~ 10:55</font>"
             "<br/>""<br/>"
             "<font style = 'font-size:15px;font-weight: bold;'>第四节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>09：05~09：50</font>"
+            "<font style = 'font-size:13px;'>11:05 ~ 11:50</font>"
         )
         label_34.setAlignment(Qt.AlignCenter)
         label_34.setStyleSheet('background-color:	MediumOrchid;')
@@ -103,11 +103,11 @@ class CourseTimetable(QMainWindow):
         label_56.setText(
             "<font style = 'font-size:15px;font-weight: bold;'>第五节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>08：15~09：00</font>"
+            "<font style = 'font-size:13px;'>14:00 ~ 14:45</font>"
             "<br/>""<br/>"
             "<font style = 'font-size:15px;font-weight: bold;'>第六节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>09：05~09：50</font>"
+            "<font style = 'font-size:13px;'>14:55 ~ 15:40</font>"
         )
         label_56.setAlignment(Qt.AlignCenter)
         label_56.setStyleSheet('background-color:	LightGreen;')
@@ -117,11 +117,11 @@ class CourseTimetable(QMainWindow):
         label_78.setText(
             "<font style = 'font-size:15px;font-weight: bold;'>第七节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>08：15~09：00</font>"
+            "<font style = 'font-size:13px;'>16:00 ~ 16:45</font>"
             "<br/>""<br/>"
             "<font style = 'font-size:15px;font-weight: bold;'>第八节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>09：05~09：50</font>"
+            "<font style = 'font-size:13px;'>16:55 ~ 17:40</font>"
         )
         label_78.setAlignment(Qt.AlignCenter)
         label_78.setStyleSheet('background-color:	MediumOrchid;')
@@ -131,11 +131,11 @@ class CourseTimetable(QMainWindow):
         label_9.setText(
             "<font style = 'font-size:15px;font-weight: bold;'>第九节</font>"
             "<br/>""<br/>"
-            "<font style = 'font-size:13px;'>08：15~09：00</font>"
+            "<font style = 'font-size:13px;'>19:00 ~ 19:45</font>"
             "<br/>""<br/>"
             "<font style = 'font-size:15px;font-weight: bold;'>第十节</font>"
             "<br/>" "<br/>"
-            "<font style = 'font-size:13px;'>09：05~09：50</font>"
+            "<font style = 'font-size:13px;'>19:55 ~ 20:40</font>"
             "<br/>""<br/>"
         )
         label_9.setAlignment(Qt.AlignCenter)
