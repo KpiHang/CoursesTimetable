@@ -3,9 +3,15 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
+import analyseCInfo_test
+
+
 class CourseTimetable(QMainWindow):
     def __init__(self):
         super(CourseTimetable, self).__init__()
+        # test
+        self.couresTableFlag = {}
+        # test
         self.initUI()
     def initUI(self):
         self.setWindowTitle("Course")
@@ -21,7 +27,7 @@ class CourseTimetable(QMainWindow):
         name.setStyleSheet('font-size:25px;')
         grid.addWidget(name,0,0,1,2)
 
-        week = QPushButton('第一周')
+        week = QPushButton('周数（Todo）')
         week.setIcon(QIcon('icons/week.ico'))
         grid.addWidget(week,0,5,1,2)
 
@@ -146,157 +152,160 @@ class CourseTimetable(QMainWindow):
         '''课表内容'''
 
         '''星期一'''
-        Monday_12 = QTextEdit('')
-        Monday_12.setStyleSheet('font-size:16px;')
-        grid.addWidget(Monday_12, 2, 1, 4, 1)
+        # Monday_12 = QTextEdit('')
+        # Monday_12.setStyleSheet('font-size:16px;')
+        # grid.addWidget(Monday_12, 2, 1, 4, 1)
+        Week1_12 = QTextEdit('')
+        self.couresTableFlag["Week1_12"] = Week1_12
+        grid.addWidget(Week1_12, 2, 1, 4, 1)
 
-        Monday_34 = QTextEdit('')
-        Monday_34.setStyleSheet('font-size:16px;')
-        grid.addWidget(Monday_34,6,1,4,1)
+        Week1_34 = QTextEdit('')
+        self.couresTableFlag["Week1_34"] = Week1_34
+        grid.addWidget(Week1_34,6,1,4,1)
 
-        Monday_56 = QTextEdit('')
-        Monday_56.setStyleSheet('font-size:16px;')
-        grid.addWidget(Monday_56, 10, 1, 4, 1)
+        Week1_56 = QTextEdit('')
+        self.couresTableFlag["Week1_56"] = Week1_56
+        grid.addWidget(Week1_56, 10, 1, 4, 1)
 
-        Monday_78 = QTextEdit('')
-        Monday_78.setStyleSheet('font-size:16px;')
-        grid.addWidget(Monday_78, 14, 1, 4, 1)
+        Week1_78 = QTextEdit('')
+        self.couresTableFlag["Week1_78"] = Week1_78
+        grid.addWidget(Week1_78, 14, 1, 4, 1)
 
-        Monday_9 = QTextEdit('')
-        Monday_9.setStyleSheet('font-size:16px;')
-        grid.addWidget(Monday_9, 18, 1, 5, 1)
+        Week1_910 = QTextEdit('')
+        self.couresTableFlag["Week1_910"] = Week1_910
+        grid.addWidget(Week1_910, 18, 1, 5, 1)
 
 
         '''星期二'''
-        Tuesday_12 = QTextEdit('')
-        Tuesday_12.setStyleSheet('font-size:16px;')
-        grid.addWidget(Tuesday_12, 2, 2, 4, 1)
+        Week2_12 = QTextEdit('')
+        self.couresTableFlag["Week2_12"] = Week2_12
+        grid.addWidget(Week2_12, 2, 2, 4, 1)
 
-        Tuesday_34 = QTextEdit('')
-        Tuesday_34.setStyleSheet('font-size:16px;')
-        grid.addWidget(Tuesday_34, 6, 2, 4, 1)
+        Week2_34 = QTextEdit('')
+        self.couresTableFlag["Week2_34"] = Week2_34
+        grid.addWidget(Week2_34, 6, 2, 4, 1)
 
-        Tuesday_56 = QTextEdit('')
-        Tuesday_56.setStyleSheet('font-size:16px;')
-        grid.addWidget(Tuesday_56, 10, 2, 4, 1)
+        Week2_56 = QTextEdit('')
+        self.couresTableFlag["Week2_56"] = Week2_56
+        grid.addWidget(Week2_56, 10, 2, 4, 1)
 
-        Tuesday_78 = QTextEdit('')
-        Tuesday_78.setStyleSheet('font-size:16px;')
-        grid.addWidget(Tuesday_78, 14, 2, 4, 1)
+        Week2_78 = QTextEdit('')
+        self.couresTableFlag["Week2_78"] = Week2_78
+        grid.addWidget(Week2_78, 14, 2, 4, 1)
 
-        Tuesday_9 = QTextEdit('')
-        Tuesday_9.setStyleSheet('font-size:16px;')
-        grid.addWidget(Tuesday_9, 18, 2, 5, 1)
+        Week2_910 = QTextEdit('')
+        self.couresTableFlag["Week2_910"] = Week2_910
+        grid.addWidget(Week2_910, 18, 2, 5, 1)
 
 
         '''星期三'''
-        Wednesday_12 = QTextEdit('')
-        Wednesday_12.setStyleSheet('font-size:16px;')
-        grid.addWidget(Wednesday_12, 2, 3, 4, 1)
+        Week3_12 = QTextEdit('')
+        self.couresTableFlag["Week3_12"] = Week3_12
+        grid.addWidget(Week3_12, 2, 3, 4, 1)
 
-        Wednesday_34 = QTextEdit('')
-        Wednesday_34.setStyleSheet('font-size:16px;')
-        grid.addWidget(Wednesday_34, 6, 3, 4, 1)
+        Week3_34 = QTextEdit('')
+        self.couresTableFlag["Week3_34"] = Week3_34
+        grid.addWidget(Week3_34, 6, 3, 4, 1)
 
-        Wednesday_56 = QTextEdit('')
-        Wednesday_56.setStyleSheet('font-size:16px;')
-        grid.addWidget(Wednesday_56, 10, 3, 4, 1)
+        Week3_56 = QTextEdit('')
+        self.couresTableFlag["Week3_56"] = Week3_56
+        grid.addWidget(Week3_56, 10, 3, 4, 1)
 
-        Wednesday_78 = QTextEdit('')
-        Wednesday_78.setStyleSheet('font-size:16px;')
-        grid.addWidget(Wednesday_78, 14, 3, 4, 1)
+        Week3_78 = QTextEdit('')
+        self.couresTableFlag["Week3_78"] = Week3_78
+        grid.addWidget(Week3_78, 14, 3, 4, 1)
 
-        Wednesday_9 = QTextEdit('')
-        Wednesday_9.setStyleSheet('font-size:16px;')
-        grid.addWidget(Wednesday_9, 18, 3, 5, 1)
+        Week3_910 = QTextEdit('')
+        self.couresTableFlag["Week3_910"] = Week3_910
+        grid.addWidget(Week3_910, 18, 3, 5, 1)
+
 
 
         '''星期四'''
-        Thursday_12 = QTextEdit('')
-        Thursday_12.setStyleSheet('font-size:16px;')
-        grid.addWidget(Thursday_12, 2, 4, 4, 1)
+        Week4_12 = QTextEdit('')
+        self.couresTableFlag["Week4_12"] = Week4_12
+        grid.addWidget(Week4_12, 2, 4, 4, 1)
 
-        Thursday_34 = QTextEdit('')
-        Thursday_34.setStyleSheet('font-size:16px;')
-        grid.addWidget(Thursday_34, 6, 4, 4, 1)
+        Week4_34 = QTextEdit('')
+        self.couresTableFlag["Week4_34"] = Week4_34
+        grid.addWidget(Week4_34, 6, 4, 4, 1)
 
-        Thursday_56 = QTextEdit('')
-        Thursday_56.setStyleSheet('font-size:16px;')
-        grid.addWidget(Thursday_56, 10, 4, 4, 1)
+        Week4_56 = QTextEdit('')
+        self.couresTableFlag["Week4_56"] = Week4_56
+        grid.addWidget(Week4_56, 10, 4, 4, 1)
 
-        Thursday_78 = QTextEdit('')
-        Thursday_78.setStyleSheet('font-size:16px;')
-        grid.addWidget(Thursday_78, 14, 4, 4, 1)
+        Week4_78 = QTextEdit('')
+        self.couresTableFlag["Week4_78"] = Week4_78
+        grid.addWidget(Week4_78, 14, 4, 4, 1)
 
-        Thursday_9 = QTextEdit('')
-        Thursday_9.setStyleSheet('font-size:16px;')
-        grid.addWidget(Thursday_9, 18, 4, 5, 1)
-
+        Week4_910 = QTextEdit('')
+        self.couresTableFlag["Week4_910"] = Week4_910
+        grid.addWidget(Week4_910, 18, 4, 5, 1)
 
         '''星期五'''
-        Friday_12 = QTextEdit('')
-        Friday_12.setStyleSheet('font-size:16px;')
-        grid.addWidget(Friday_12, 2, 5, 4, 1)
+        Week5_12 = QTextEdit('')
+        self.couresTableFlag["Week5_12"] = Week5_12
+        grid.addWidget(Week5_12, 2, 5, 4, 1)
 
-        Friday_34 = QTextEdit('')
-        Friday_34.setStyleSheet('font-size:16px;')
-        grid.addWidget(Friday_34, 6, 5, 4, 1)
+        Week5_34 = QTextEdit('')
+        self.couresTableFlag["Week5_34"] = Week5_34
+        grid.addWidget(Week5_34, 6, 5, 4, 1)
 
-        Friday_56 = QTextEdit('')
-        Friday_56.setStyleSheet('font-size:16px;')
-        grid.addWidget(Friday_56, 10, 5, 4, 1)
+        Week5_56 = QTextEdit('')
+        self.couresTableFlag["Week5_56"] = Week5_56
+        grid.addWidget(Week5_56, 10, 5, 4, 1)
 
-        Friday_78 = QTextEdit('')
-        Friday_78.setStyleSheet('font-size:16px;')
-        grid.addWidget(Friday_78, 14, 5, 4, 1)
+        Week5_78 = QTextEdit('')
+        self.couresTableFlag["Week5_78"] = Week5_78
+        grid.addWidget(Week5_78, 14, 5, 4, 1)
 
-        Friday_9 = QTextEdit('')
-        Friday_9.setStyleSheet('font-size:16px;')
-        grid.addWidget(Friday_9, 18, 5, 5, 1)
+        Week5_910 = QTextEdit('')
+        self.couresTableFlag["Week5_910"] = Week5_910
+        grid.addWidget(Week5_910, 18, 5, 5, 1)
 
 
         '''星期六'''
-        Saturday_12 = QTextEdit('')
-        Saturday_12.setStyleSheet('font-size:16px;')
-        grid.addWidget(Saturday_12, 2, 6, 4, 1)
+        Week6_12 = QTextEdit('')
+        self.couresTableFlag["Week6_12"] = Week6_12
+        grid.addWidget(Week6_12, 2, 6, 4, 1)
 
-        Saturday_34 = QTextEdit('')
-        Saturday_34.setStyleSheet('font-size:16px;')
-        grid.addWidget(Saturday_34, 6, 6, 4, 1)
+        Week6_34 = QTextEdit('')
+        self.couresTableFlag["Week6_34"] = Week6_34
+        grid.addWidget(Week6_34, 6, 6, 4, 1)
 
-        Saturday_56 = QTextEdit('')
-        Saturday_56.setStyleSheet('font-size:16px;')
-        grid.addWidget(Saturday_56, 10, 6, 4, 1)
+        Week6_56 = QTextEdit('')
+        self.couresTableFlag["Week6_56"] = Week6_56
+        grid.addWidget(Week6_56, 10, 6, 4, 1)
 
-        Saturday_78 = QTextEdit('')
-        Saturday_78.setStyleSheet('font-size:16px;')
-        grid.addWidget(Saturday_78, 14, 6, 4, 1)
+        Week6_78 = QTextEdit('')
+        self.couresTableFlag["Week6_78"] = Week6_78
+        grid.addWidget(Week6_78, 14, 6, 4, 1)
 
-        Saturday_9 = QTextEdit('')
-        Saturday_9.setStyleSheet('font-size:16px;')
-        grid.addWidget(Saturday_9, 18, 6, 5, 1)
+        Week6_910 = QTextEdit('')
+        self.couresTableFlag["Week6_910"] = Week6_910
+        grid.addWidget(Week6_910, 18, 6, 5, 1)
 
 
         '''星期日'''
-        Sunday_12 = QTextEdit('')
-        Sunday_12.setStyleSheet('font-size:16px;')
-        grid.addWidget(Sunday_12, 2, 7, 4, 1)
+        Week7_12 = QTextEdit('')
+        self.couresTableFlag["Week7_12"] = Week7_12
+        grid.addWidget(Week7_12, 2, 7, 4, 1)
 
-        Sunday_34 = QTextEdit('')
-        Sunday_34.setStyleSheet('font-size:16px;')
-        grid.addWidget(Sunday_34, 6, 7, 4, 1)
+        Week7_34 = QTextEdit('')
+        self.couresTableFlag["Week7_34"] = Week7_34
+        grid.addWidget(Week7_34, 6, 7, 4, 1)
 
-        Sunday_56 = QTextEdit('')
-        Sunday_56.setStyleSheet('font-size:16px;')
-        grid.addWidget(Sunday_56, 10, 7, 4, 1)
+        Week7_56 = QTextEdit('')
+        self.couresTableFlag["Week7_56"] = Week7_56
+        grid.addWidget(Week7_56, 10, 7, 4, 1)
 
-        Sunday_78 = QTextEdit('')
-        Sunday_78.setStyleSheet('font-size:16px;')
-        grid.addWidget(Sunday_78, 14, 7, 4, 1)
+        Week7_78 = QTextEdit('')
+        self.couresTableFlag["Week7_78"] = Week7_78
+        grid.addWidget(Week7_78, 14, 7, 4, 1)
 
-        Sunday_9 = QTextEdit('')
-        Sunday_9.setStyleSheet('font-size:16px;')
-        grid.addWidget(Sunday_9, 18, 7, 5, 1)
+        Week7_910 = QTextEdit('')
+        self.couresTableFlag["Week7_910"] = Week7_910
+        grid.addWidget(Week7_910, 18, 7, 5, 1)
 
 
         widget.setLayout(grid)
@@ -310,5 +319,37 @@ if __name__ == '__main__':
                             QPushButton:pressed{background-color: #f0f0f0;}
                         ''')
     main_wnd = CourseTimetable()
+
+    # # test
+    # main_wnd.couresTableFlag["Week1_12"].setText(
+    #     "<font style = 'font-size:15px;font-weight: bold;'>分布式计算</font>"
+    #     "<br/>"
+    #     "<font style = 'font-size:13px;'>(老师姓名 北区302教师)</font>"
+    #     "<br/>""<br/>"
+    #     "<font style = 'font-size:10px;'>单双周；第1-2节</font>"
+    #     "<br/>"
+    #     "<font style = 'font-size:10px;'>100000000</font>"
+    #     "<br/>"
+    # )
+    # main_wnd.couresTableFlag["Week1_12"].setAlignment(Qt.AlignCenter)
+    # # test
+
+    coursesInfos = analyseCInfo_test.analyseCinfo()
+    for flag in coursesInfos:
+        text = f'''
+            <font style = 'font-size:15px;font-weight: bold;'>{ "《"+ coursesInfos[flag]['kcmc'] + "》" }</font>
+            <br/>
+            <font style = 'font-size:13px;'>{(coursesInfos[flag]['rkjsmc'] + coursesInfos[flag]['classroomNo'])}</font>
+            <br/>
+            <font style = 'font-size:10px;'>{coursesInfos[flag]['skzlxmc'] + "，" + str(coursesInfos[flag]['ksz']) + "~" +str(coursesInfos[flag]['jsz']) + "周" }</font>
+            <br/>
+            <font style = 'font-size:10px;'>{coursesInfos[flag]['kcbm']}</font>
+            <br/>
+        '''
+        main_wnd.couresTableFlag[flag].setText(text)
+        main_wnd.couresTableFlag[flag].setStyleSheet('background-color:LavenderBlush;')
+        # 隐藏竖直滚动条；
+        main_wnd.couresTableFlag[flag].setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        main_wnd.couresTableFlag[flag].setAlignment(Qt.AlignCenter)
     main_wnd.show()
     app.exec()
