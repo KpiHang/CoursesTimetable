@@ -1,9 +1,11 @@
+import datetime
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
 import analyseCInfo_test
+import utilities
 
 
 class CourseTimetable(QMainWindow):
@@ -27,7 +29,8 @@ class CourseTimetable(QMainWindow):
         name.setStyleSheet('font-size:25px;')
         grid.addWidget(name,0,0,1,2)
 
-        week = QPushButton('周数（Todo）')
+
+        week = QPushButton(f"{ datetime.date.today() }  第{ utilities.getWeekN() }周")
         week.setIcon(QIcon('icons/week.ico'))
         grid.addWidget(week,0,5,1,2)
 
@@ -336,17 +339,37 @@ if __name__ == '__main__':
 
     coursesInfos = analyseCInfo_test.analyseCinfo()
     for flag in coursesInfos:
-        text = f'''
-            <font style = 'font-size:15px;font-weight: bold;'>{ "《"+ coursesInfos[flag]['kcmc'] + "》" }</font>
-            <br/>
-            <font style = 'font-size:13px;'>{(coursesInfos[flag]['rkjsmc'] + coursesInfos[flag]['classroomNo'])}</font>
-            <br/>
-            <font style = 'font-size:10px;'>{coursesInfos[flag]['skzlxmc'] + "，" + str(coursesInfos[flag]['ksz']) + "~" +str(coursesInfos[flag]['jsz']) + "周" }</font>
-            <br/>
-            <font style = 'font-size:10px;'>{coursesInfos[flag]['kcbm']}</font>
-            <br/>
-        '''
-        main_wnd.couresTableFlag[flag].setText(text)
+        if len(coursesInfos[flag]) == 1:
+            course_info_dict = coursesInfos[flag][0]
+
+            text = f'''
+                <font style = 'font-size:15px;font-weight: bold;'>{ "《"+ course_info_dict['kcmc'] + "》" }</font>
+                <br/>
+                <font style = 'font-size:13px;'>{(course_info_dict['rkjsmc'] + course_info_dict['classroomNo'])}</font>
+                <br/>
+                <font style = 'font-size:10px;'>{course_info_dict['skzlxmc'] + "，" + str(course_info_dict['ksz']) + "~" +str(course_info_dict['jsz']) + "周" }</font>
+                <br/>
+                <font style = 'font-size:10px;'>{course_info_dict['kcbm']}</font>
+                <br/>
+            '''
+            main_wnd.couresTableFlag[flag].setText(text)
+        else:
+            course_info_dict1 = coursesInfos[flag][0]
+            course_info_dict2 = coursesInfos[flag][1]
+            text = f'''
+                <font style = 'font-size:10px;font-weight: bold;'>{ "1."+ course_info_dict1['kcmc']  }</font>
+                <br/>
+                <font style = 'font-size:10px;'>{(course_info_dict1['rkjsmc'] + course_info_dict1['classroomNo'])}</font>
+                <br/> 
+                <font style = 'font-size:10px;'>{course_info_dict1['skzlxmc'] + "，" + str(course_info_dict1['ksz']) + "~" +str(course_info_dict1['jsz']) + "周" }</font>
+                <br/>
+                <font style = 'font-size:10px;font-weight: bold;'>{ "2."+ course_info_dict2['kcmc'] }</font>
+                <br/>
+                <font style = 'font-size:10px;'>{(course_info_dict2['rkjsmc'] + course_info_dict2['classroomNo'])}</font>
+                <br/>
+                <font style = 'font-size:10px;'>{course_info_dict1['skzlxmc'] + "，" + str(course_info_dict1['ksz']) + "~" +str(course_info_dict1['jsz']) + "周" }</font>
+            '''
+            main_wnd.couresTableFlag[flag].setText(text)
         main_wnd.couresTableFlag[flag].setStyleSheet('background-color:LavenderBlush;')
         # 隐藏竖直滚动条；
         main_wnd.couresTableFlag[flag].setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
